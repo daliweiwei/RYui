@@ -1,8 +1,8 @@
 /*
-* RYui New DPL CSS Reset Based on
+* RYui normalize.css
 * http://github.com/necolas/normalize.css
 * @authors liweiliang QQ:406320591(406320591@QQ.com).
-* @date 2017-08-01,
+* @date 2017-08-16,
 * @RYui version 1.0.0
 * @liweiliang Inc. All Rights Reserved
 */
@@ -246,6 +246,15 @@ sup {
   top: -0.5em;
 }
 
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+ul{
+  list-style: none;
+}
 /* Embedded content
    ========================================================================== */
 
@@ -512,4 +521,21 @@ template {
 
 [hidden] {
   display: none;
+}
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
 }
