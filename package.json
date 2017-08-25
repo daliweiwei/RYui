@@ -7,8 +7,10 @@
     "gulp": "^3.9.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-cheerio": "^0.6.2",
+    "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^3.7.0",
     "gulp-concat": "^2.6.1",
     "gulp-dom-src": "^0.2.0",
