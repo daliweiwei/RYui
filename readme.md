@@ -7,6 +7,9 @@ RYui 即 荣耀ui,初定，当然以后有可能也会叫如意UI、荣誉UI、�
 
 给框架注册了个域名 http://www.RongYaoui.com/ 是不是很666.备案ing
 
+新增域名 www.RYui.org
+	
+
 作者：李维亮
 
 blog：http://www.liweiliang.com/
