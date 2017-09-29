@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dialog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="../css/RYui-framework.css">
+	<link rel="stylesheet" href="../css/RYui-components.css">
+	<link rel="stylesheet" href="../css/RYui-grid.css">
+	<link rel="stylesheet" href="../css/RYui.css">
+</head>
+<body>	
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/RYui-components.js"></script>
+	<script>	
+		var $dialog_box = $('<div class="dialog_box"></div>'),
+		$dialog_cont = $('<div class="dialog_cont">ssssssssssssssssssss</div>'),
+		$dialog_btn = $('<div class="dialog_btn"></div>'),
+		$dialog_save_btn = $('<button type="button" class=" ryui-btn ryui-btn-primary"><span>保存</span></button>'),
+		$dialog_cancel_btn = $('<button type="button" class="mr10 ryui-btn"><span>取消</span></button>');
+		$dialog_box.append($dialog_cont).append($dialog_btn)
+		$dialog_btn.append($dialog_cancel_btn).append($dialog_save_btn);
+		$dialog_save_btn.on("click",function(){
+			console.log("save");
+		});
+		$dialog_cancel_btn.on("click",function(){
+			console.log("cancel");
+			RY.dialog.methods.close(test_dialog);
+		})
+		var test_dialog = RY.dialog({
+			title: "title名字",
+			width:250,
+			height:120,
+			content:$dialog_box  //content也可以直接传字符 content:'hahhahaha' 
+		});
+
+	</script>
+</body>
+</html>

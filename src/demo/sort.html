@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>中文按照拼音排序</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="../css/RYui-framework.css">
+  <link rel="stylesheet" href="../css/RYui-components.css">
+  <link rel="stylesheet" href="../css/RYui-grid.css">
+  <link rel="stylesheet" href="../css/RYui.css">
+</head>
+<body>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/RYui-pinyin.js"></script>
+  <script>
+    function arraySort(a,b){
+      var x = ConvertPinyin(a);
+      var y = ConvertPinyin(b);
+      return x.localeCompare(y);
+    }
+    var testarray = ['嘻嘻','大哥','哎','啊啊','平板','额了','几个','迎风','则啊','苹果','巴特','菠萝','香蕉'];
+    var html = testarray.sort(arraySort);
+    console.log(html);//输出
+  </script>
+</body>
+</html>

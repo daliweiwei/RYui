@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用JS实现汉字转拼音</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="../css/RYui-framework.css">
+  <link rel="stylesheet" href="../css/RYui-components.css">
+  <link rel="stylesheet" href="../css/RYui-grid.css">
+  <link rel="stylesheet" href="../css/RYui.css">
+</head>
+<body>
+  请输入：<input type="text" id="J_input" /><br/><br/>
+  <input type="button" id="J_btn" value="转化"/><br/><br/>
+  输出是：<span id="J_output">...</span>
+
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/RYui-pinyin.js"></script>
+  <script>
+    var btn = document.getElementById('J_btn'),
+    input = document.getElementById('J_input'),
+    output = document.getElementById('J_output');
+
+    btn.addEventListener('click', function(e){
+
+      var inputV = input.value,
+      str = ConvertPinyin(inputV);
+
+      output.innerHTML = str;
+    }, false);
+  </script>
+</body>
+</html>

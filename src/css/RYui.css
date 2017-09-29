@@ -1,0 +1,239 @@
+/*
+* @authors liweiliang QQ:406320591(406320591@QQ.com).
+* @date 2017-08-01,
+* @RYui version 1.0.0
+* @liweiliang Inc. All Rights Reserved
+*/
+.ryui-navbar{position: relative;min-height: 44px;margin-bottom: 20px;background-color:#eef1f6;border: 1px solid transparent;}
+.ryui-nav{position:relative;padding:0 20px;background-color:#eef1f6;border-radius:2px;font-size:0;box-sizing:border-box!important}
+.ryui-nav li{position:relative;display:inline-block;*display:inline;*zoom:1;color: #48576a;vertical-align:middle;line-height:50px;border-bottom: 5px solid transparent; box-sizing: border-box;}
+.ryui-nav li:hover{border-bottom: 5px solid #20a0ff;}
+.ryui-nav li a{display:block;padding:0 20px;color: inherit;font-size:14px;transition:all .3s;-webkit-transition:all .3s}
+.ryui-nav li.ryui-active a{color: #20a0ff;}
+.ryui-header{display: none;}
+
+/*form begin*/
+
+
+.ryui-form{padding: 20px;}
+.ryui-form > .ryui-form-item{font-size:12px;margin-bottom: 15px;clear: both;}
+.ryui-form > .ryui-form-item > .ryui-form-label{position: relative; float: left;display: block;width: 80px;line-height: 20px;padding: 6px 9px;font-weight: 400;text-align: right;}
+.ryui-form-control{position: relative;margin-left: 110px;min-height: 36px;line-height: 36px;}
+
+.ryui-form > .ryui-form-item input[type="text"],
+.ryui-form > .ryui-form-item input[type="password"],
+.ryui-form > .ryui-form-item input[type="number"],
+.ryui-form > .ryui-form-item select.ryui-select{display: block;width: 100%;padding-left: 10px;height: 32px;line-height: 32px;line-height: 30px\9;border: 1px solid #e6e6e6;background-color: #fff;border-radius: 4px;}
+
+
+.ryui-form > .ryui-form-item select.ryui-select{appearance:none; -moz-appearance:none;-webkit-appearance:none;box-sizing: border-box;}
+.ryui-form > .ryui-form-item select.ryui-select:hover{color: #101010;border:1px solid #cdcdcd;}    
+.ryui-form > .ryui-form-item select.ryui-select:focus {box-shadow: 0 0 2px 1px #404040;}
+
+
+.ryui-form > .ryui-form-item select.ryui-select option{display: block;width: 100%;padding: 10px 0;height: 32px;line-height: 32px;line-height: 30px\9;border-bottom: 1px solid #e6e6e6; box-sizing: border-box;}
+.ryui-form > .ryui-form-item select.ryui-select option[selected]{ font-weight:bold}
+
+.ryui-form > .ryui-form-item select.ryui-select option:nth-child(even) { background-color:#f5f5f5; }
+select::-ms-expand { display: none; }
+.ryui-form > .ryui-form-item select.ryui-select option:hover{
+    background: red;
+}
+
+/* input[type="checkbox"]:focus, input[type="file"]:focus, input[type="radio"]:focus {
+    outline:none;
+    background: #108ee9;
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+    }*/
+
+    .ryui-form > .ryui-form-item input[type="text"],
+    .ryui-form > .ryui-form-item input[type="password"],
+    .ryui-form > .ryui-form-item input[type="number"],
+    .ryui-form > .ryui-form-item select.ryui-select{
+       outline: 0;
+       -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+       transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+       -webkit-box-sizing: border-box!important;
+       -moz-box-sizing: border-box!important;
+       box-sizing: border-box!important;
+   }
+   .ryui-form > .ryui-form-item input[type="text"]:focus,
+   .ryui-form > .ryui-form-item input[type="password"]:focus,
+   .ryui-form > .ryui-form-item input[type="number"]:focus,
+   .ryui-form > .ryui-form-item select.ryui-select:focus{  
+     outline:none;
+     border-style:solid;  
+     border-color: #03a9f4;  
+     box-shadow: 0 0 5px #03a9f4;  
+ }
+ .ryui-form-checkbox{
+    cursor: pointer;
+    font-size: 12px;
+    display: inline-block;
+}
+.ryui-checkbox{
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    vertical-align: text-bottom;
+}
+.ryui-textarea{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 20px;
+    padding: 6px 10px;
+    resize: vertical;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.ryui-textarea:focus{
+    outline:none;
+    border-style:solid;  
+    border-color: #03a9f4;  
+    box-shadow: 0 0 5px #03a9f4;  
+}
+/*radio*/
+.ryui-form-radio,.ryui-radio{
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.ryui-form-radio{font-size: 12px;margin-right: 8px;}
+.ryui-radio{outline: none;line-height: 1;vertical-align: text-bottom;}
+span.ryui-radio+* {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.ryui-btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 0 15px;
+    font-size: 12px;
+    border-radius: 4px;
+    height: 28px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    position: relative;
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+.ryui-btn-primary{
+    color: #fff;
+    background-color: #108ee9;
+    border-color: #108ee9;
+}
+.ryui-btn-dashed {
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+    border-style: dashed;
+}
+.ryui-btn-danger {
+    color: #f04134;
+    background-color: #f7f7f7;
+    border-color: #d9d9d9;
+}
+.ryui-btn-box{
+    display: block;
+    line-height: 32px;
+}
+/*form end*/
+/*table*/
+.ryui-table-x{ position: relative; overflow-x: auto; }
+.ryui-table-y{ position: relative; overflow-y: auto; }
+.ryui-table{width: 100%;margin: 10px 0;background-color: #fff;}
+.ryui-table thead tr {background-color:#f2f2f2;}
+.ryui-table th {text-align:left;}
+.ryui-table th, .ryui-table td {font-size:14px;min-height:20px;line-height:20px;padding:9px 10px;border:1px solid #e2e2e2;}
+.ryui-table tr:hover, .ryui-table tr:nth-child(even) {background-color:#f8f8f8}
+
+.ryui-list{}
+.ryui-list li{ height: 28px; line-height: 28px; }
+
+.ryui-page{display: block;vertical-align: middle;margin: 10px 0;font-size: 12px; }
+.ryui-page li{display: inline-block;cursor: pointer;min-width: 28px;height:28px;line-height:28px;margin-right:8px;vertical-align: middle;text-align: center;border: 1px solid #d9d9d9;border-radius: 4px; 
+}
+.ryui-page li a{display: block; color: rgba(0,0,0,.65);text-decoration: none;margin: 0 6px;-webkit-transition: none;transition: none;}
+.ryui-page li.curr{background-color: #108ee9;border-color: #108ee9;}
+.ryui-page li.curr a{color: #fff;background: }
+
+
+.forgetPassword{ float: right;color: #2c94fc; }
+.dialog_btn{ position: absolute; bottom: 0; left: 0; width:100%; text-align: center; }
+
+
+.ryui-error{position: absolute; top:0; left: 0; width:100%; height: 100%; background-color: #f8f8f8; }
+.ryui-error-content{ text-align: center; }
+.ryui-error-text{ padding:0 20px; }
+.ryui-error-title{font-size: 20px;font-weight: 400;margin-bottom: 10px;}
+.ryui-error-info{ color: #999999;font-size: 14px; }
+
+[class^="ryui-icon-"], [class*=" ryui-icon-"] {
+    display: inline-block;
+    font: normal normal normal 14px/1 "RYui";
+    margin-bottom: 20px;
+    vertical-align: middle;
+    font-size: inherit;
+    text-align: center;
+    text-rendering: auto;
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ryui-icon-error{color: #F76260;}
+.ryui-icon-warn{ color: #FFBE00;}
+.ryui-icon-success{color: #09BB07;}
+.ryui-icon-prompt{color: #10AEFF;}
+.ryui-icon-waiting{color: #10AEFF}
+.ryui-icon-prompt:before{
+    content: "\EA03";
+}
+.ryui-icon-error:before,.ryui-icon-warn:before {
+    content: "\EA0B";
+}
+.ryui-icon-success:before{
+    content: "\EA06";
+}
+.ryui-icon-waiting:before {
+    content: "\EA09";
+}
+[class^="ryui-icon-"]:before, [class*=" ryui-icon-"]:before{
+    display: inline-block;
+    font-style: normal;
+    font-size: 93px;
+}
+
+
+@media(max-width:640px){
+    .ryui-nav{display: none; position: absolute; right: 0; top: 44px; width: 100px; max-height:245px;padding: 0 10px; overflow-y:scroll; z-index: 1;}
+    .ryui-nav-on{display: block;-moz-transition: all 5s linear 1s; -webkit-transition: all 5s linear 1s; -o-transition: all 5s linear 1s; transition: all 5s linear 1s ;}
+    .ryui-nav li{ display: block; line-height: 33px;border-bottom: 2px solid transparent; }
+    .ryui-nav li a{ display:block; padding:0; text-align: center; }
+    .ryui-nav li:hover{border-bottom: 2px solid #20a0ff;}
+    .ryui-header{display:block;height: 44px;line-height: 44px; padding:0 15px;background: #eef1f6;}
+    .ryui-nav-btn{float:right;display: block; width: 34px; height: 34px; margin-top:5px; border: 1px solid #f9f9f9;border-radius: 4px;background: url(../img/menu.png) no-repeat center center #f9f9f9;}
+    .ryui-nav-logo{float: left;height: 50px;padding: 15px 15px;font-size: 18px;line-height: 20px;font-weight: 500;color: #563d7c;}
+}
