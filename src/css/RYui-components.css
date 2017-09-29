@@ -4,3 +4,47 @@
  * @RYui version 1.0.0
  * @liweiliang Inc. All Rights Reserved
  */
+@charset "utf-8";
+@-webkit-keyframes ryui_loading_rotate{from{-webkit-transform: rotate(0deg)}to{-webkit-transform: rotate(360deg)}}
+@-moz-keyframes ryui_loading_rotate{from{-moz-transform: rotate(0deg)}to{-moz-transform: rotate(360deg)}}
+@-ms-keyframes ryui_loading_rotate{from{-ms-transform: rotate(0deg)}to{-ms-transform: rotate(360deg)}}
+@-o-keyframes ryui_loading_rotate{from{-o-transform: rotate(0deg)}to{-o-transform: rotate(360deg)}}
+@keyframes ryui_loading_rotate{from{transform: rotate(0deg)}to{transform: rotate(360deg)}}
+/*dialog*/
+.ryui-dialog{position: absolute;left: 0;top: 0; width:100%; height:100%;z-index:9999;}
+.ryui-dialog-mask{position: fixed; left:0; top:0; right:0; bottom:0; background-color: #000; opacity: .125;}
+.ryui-dialog-body{display: inline-block; position: relative; width:680px; height: 480px; max-width: 98%;max-height: 98%; background-color: #fff; padding-bottom:7px; border-radius: 7px; }
+.ryui-dialog-title{position: absolute; width:100%; height: 32px; background: #20a0ff;border-top-left-radius: 7px; border-top-right-radius: 7px; z-index: 10;}
+.ryui-dialog-title h2{font-size: 1.125rem;color: #fff;margin:0 0 0 .5rem;line-height: 32px;}
+.ryui-dialog-closeBtn{position: absolute;top:0;right: 0;z-index: 3;display: inline-block;width: 32px;height:32px;font-size: 32px;line-height: normal;cursor: pointer;text-align: center;vertical-align: middle;font-family: sans-serif;color:#fff; }
+.ryui-dialog-closeBtn:before{content: "×";display: inherit;vertical-align: text-top;line-height: .8;}
+.ryui-dialog-closeBtn:hover{color:red;}
+.ryui-dialog-content{position: relative; height:100%; padding-top: 33px; box-sizing: border-box;}
+.dialog_box{padding: 10px;}
+
+/*toast*/
+.ryui-toast{position: fixed;top: 48%;left: 0;width: 100%;text-align: center;z-index:10000;}
+.ryui-toast-body{display: inline-block;position: relative;padding: 4px 6px;}
+.ryui-toast-bg{position: absolute;top:0;left:0;bottom:0;right: 0;background-color: #000;opacity: .98;border-radius: 3px;box-shadow:0 0 2px 0 rgba(0,0,0,.5);}
+.ryui-toast-bg ~ div{position: relative;z-index: 2;}
+.ryui-toast-text{color:#fff;font-size: 1rem;}
+/*loading*/
+.ryui-loading{position: absolute;top:0;left: 0;width: 100%;height: 100%;text-align: center;vertical-align:middle;z-index:10000;}
+.ryui-loading-mask{position: fixed;background-color: #000;left:0;top:0;right:0;bottom:0;opacity: .1;z-index: 1;}
+.ryui-loading-position{ display: inline-block; position: relative; width: 1px;height: 1px;z-index: 2;}
+.ryui-loading-frames{width: 64px;height: 64px;position: absolute;top: -32px;left: -32px;overflow: hidden;border-radius: 50%;box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);}
+.ryui-loading-frames li{position: absolute;left: 0;top: 0;right: 0;bottom: 0;border-radius: 50%;clip: rect(0,32px,32px,0);list-style: inside none none;}
+.ryui-loading-frames li:after{content: ' ';position: absolute;left: 0;top: 0;right: 0;bottom: 0;box-shadow: inset 0 0 0 3px #03b4fa;border-radius: 50%;clip: rect(0,32px,32px,0);transform-origin: 50% 50%;transform: rotate(-60deg);}
+.ryui-loading-frames li.ryui-loading-frames-1{transform: rotate(0deg);opacity: .95;}
+.ryui-loading-frames li.ryui-loading-frames-2{transform: rotate(-30deg);opacity: .85;}
+.ryui-loading-frames li.ryui-loading-frames-3{transform: rotate(-60deg);opacity: .75;}
+.ryui-loading-frames li.ryui-loading-frames-4{transform: rotate(-90deg);opacity: .65;}
+.ryui-loading-frames li.ryui-loading-frames-5{transform: rotate(-120deg);opacity: .55;}
+.ryui-loading-frames li.ryui-loading-frames-6{transform: rotate(-150deg);opacity: .45;}
+.ryui-loading-frames li.ryui-loading-frames-7{transform: rotate(-180deg);opacity: .32;}
+.ryui-loading-frames li.ryui-loading-frames-8{transform: rotate(-210deg);opacity: .16;}
+.ryui-loading-frames li.ryui-loading-frames-9{transform: rotate(-240deg);opacity: .08;}
+.ryui-loading-frames li.ryui-loading-frames-10{transform: rotate(-270deg);opacity: .04;}
+.ryui-loading-frames li.ryui-loading-frames-11{transform: rotate(-300deg);opacity: .02;}
+.ryui-loading-frames li.ryui-loading-frames-12{transform: rotate(-330deg);opacity: .01;}
+.ryui-loading-rotate{-webkit-transition-property: -webkit-transform;-moz-transition-property: -moz-transform;-ms-transition-property: -ms-transform;-o-transition-property: -o-transform;transition-property: transform; -webkit-transition-duration: 0s;-moz-transition-duration: 0s;-ms-transition-duration: 0s; -o-transition-duration: 0s;transition-duration: 0s; -webkit-animation: ryui_loading_rotate 1s linear infinite; -moz-animation: ryui_loading_rotate 1s linear infinite; -ms-animation: ryui_loading_rotate 1s linear infinite; -o-animation: ryui_loading_rotate 1s linear infinite; animation: ryui_loading_rotate 1s linear infinite;}
