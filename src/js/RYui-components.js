@@ -15,7 +15,7 @@
  		width:'',
  		height:'',
  		content:'',
- 		target:$("body")[0]
+ 		target:$("body")
  	},options);
  	$ryui_dialog.options = options; 
  	RY.dialog.init($ryui_dialog,param);
@@ -58,7 +58,7 @@
  		heigth:'',
  		holdtime:3000,
  		text:'提示',
- 		target:$("body")[0]
+ 		target:$("body")
  	},options);
  	var $ryui_toast = $('<div class="ryui-toast"></div>'),
  	$ryui_toast_body = $('<div class="ryui-toast-body"></div>'),
