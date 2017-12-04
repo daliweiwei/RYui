@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="../css/RYui-framework.css">
+	<link rel="stylesheet" href="../css/RYui-components.css">
+	<link rel="stylesheet" href="../css/RYui-grid.css">
+	<link rel="stylesheet" href="../css/RYui.css">
+</head>
+<body>
+	<form class="formData">
+		<input type="text" name="name">
+		<input type="text" name="age">
+		<input type="button" class="subbtn" value="提交">
+	</form>
+	<script src="../js/jquery.min.js"></script>
+	<script>
+		$(".subbtn").on("click",function(){
+			var formData =  RY.serialize($(".formData")[0]);
+			console.log(formData);
+			$.ajax({
+				url: 'post.php',
+				type: 'POST',
+				dataType: 'json',
+				data: formData,
+			})
+			.done(function(data) {
+				console.log(data);
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		})
+	</script>
+	<script src="../js/RYui-components.js"></script>
+	<script src="../js/RYui-utils.js"></script>
+</body>
+</html>
