@@ -52,3 +52,47 @@ RY.serialize=function(form){
 	});
 	return _arr;
 };
+RY.deserialize =function(form,data){
+	form.reset();
+	$.each(data,function(key,value){
+        var element=form.elements[key];
+        if(element){
+            switch (element.type || element[0].type){
+                case "checkbox":
+                    if(element.length){
+                        $.each(element,function(_index,_el){
+                            for(var i=0;i<value.length;i++){
+                                if(_el.value==value[i]){
+                                    _el.checked=true;
+                                    break;
+                                }
+                            }
+                        });
+                    }else{
+                        if(element.value==value){
+                            element.checked=true;
+                        }
+                    }
+                break;
+                case "radio":
+                    $.each(element,function(index,obj){
+                        if(obj.value==value){
+                            obj.checked=true;
+                        }
+                    });
+                break;
+                case "select-one":
+                    for(var i=0;i<element.length;i++){
+                        if(element[i].value==value){
+                            element[i].selected=true;
+                            break;
+                        }
+                    }
+                break;
+                default:
+                    element.value=value;
+                break;
+            }
+        }
+    });
+};
