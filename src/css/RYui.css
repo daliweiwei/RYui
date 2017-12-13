@@ -40,35 +40,37 @@ select::-ms-expand { display: none; }
     background: red;
 }
 
-/* input[type="checkbox"]:focus, input[type="file"]:focus, input[type="radio"]:focus {
-    outline:none;
-    background: #108ee9;
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-    }*/
+/* 
+input[type="checkbox"]:focus, input[type="file"]:focus, input[type="radio"]:focus {
+outline:none;
+background: #108ee9;
+outline: thin dotted;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;
+}
+*/
 
-    .ryui-form > .ryui-form-item input[type="text"],
-    .ryui-form > .ryui-form-item input[type="password"],
-    .ryui-form > .ryui-form-item input[type="number"],
-    .ryui-form > .ryui-form-item select.ryui-select{
-       outline: 0;
-       -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
-       transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
-       -webkit-box-sizing: border-box!important;
-       -moz-box-sizing: border-box!important;
-       box-sizing: border-box!important;
-   }
-   .ryui-form > .ryui-form-item input[type="text"]:focus,
-   .ryui-form > .ryui-form-item input[type="password"]:focus,
-   .ryui-form > .ryui-form-item input[type="number"]:focus,
-   .ryui-form > .ryui-form-item select.ryui-select:focus{  
-     outline:none;
-     border-style:solid;  
-     border-color: #03a9f4;  
-     box-shadow: 0 0 5px #03a9f4;  
- }
- .ryui-form-checkbox{
+.ryui-form > .ryui-form-item input[type="text"],
+.ryui-form > .ryui-form-item input[type="password"],
+.ryui-form > .ryui-form-item input[type="number"],
+.ryui-form > .ryui-form-item select.ryui-select{
+    outline: 0;
+    -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+}
+.ryui-form > .ryui-form-item input[type="text"]:focus,
+.ryui-form > .ryui-form-item input[type="password"]:focus,
+.ryui-form > .ryui-form-item input[type="number"]:focus,
+.ryui-form > .ryui-form-item select.ryui-select:focus{  
+    outline:none;
+    border-style:solid;  
+    border-color: #03a9f4;  
+    box-shadow: 0 0 5px #03a9f4;  
+}
+.ryui-form-checkbox{
     cursor: pointer;
     font-size: 12px;
     display: inline-block;
