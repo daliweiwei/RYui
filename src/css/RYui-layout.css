@@ -1,0 +1,16 @@
+/*
+* @authors liweiliang QQ:406320591(406320591@QQ.com).
+* @date 2017-12-12,
+* @RYui version 1.0.0
+* @liweiliang Inc. All Rights Reserved
+*/
+
+@charset "utf-8";
+.ryui-fiexd{position: absolute;left: 0;top: 0; right: 0; bottom: 0;min-width: 1000px;}
+.ryui-fiexd-item{position: absolute;top:0;left: 0;right: 0;bottom: 0;}
+.ryui-fiexd-top,.ryui-fiexd-left,.ryui-fiexd-right,.ryui-fiexd-bottom,.ryui-fiexd-center{position: absolute;}
+.ryui-fiexd-top{top:0;left: 0;right: 0;border-bottom: 1px solid #ccc;}
+.ryui-fiexd-left{top:0;left: 0;bottom: 0;overflow:auto;border-right: 1px solid #ccc;}
+.ryui-fiexd-right{top:0;right: 0;bottom: 0;overflow:auto;}
+.ryui-fiexd-bottom{left: 0;right: 0;bottom: 0;border-top: 1px solid #ccc;}
+.ryui-fiexd-center{top:0;left: 0;right: 0;bottom: 0;overflow:auto;}
