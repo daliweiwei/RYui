@@ -41,7 +41,15 @@
  		dialog.body.css('height',options.height);
  	}
  	dialog.closeBtn.on("click",function(){
- 		RY.dialog.methods.close(dialog);
+ 		if(dialog.options.onPreClose && typeof dialog.options.onPreClose == "function"){
+ 			dialog.options.onPreClose(dialog,function(isCan){
+ 				if(isCan){
+ 					RY.dialog.methods.close(dialog);
+ 				}
+ 			});
+ 		}else{
+ 			RY.dialog.methods.close(dialog);
+ 		}
  	})
  	dialog.content.append(options.content);
  	if(options.target){
