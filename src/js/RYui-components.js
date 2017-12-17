@@ -80,6 +80,9 @@
  	if(options.holdtime){
  		setTimeout(function(){
  			toast.remove();
+ 			if(typeof options.callback == "function"){
+ 				options.callback.call(this);
+ 			}
  		},options.holdtime)
  	}
  };
