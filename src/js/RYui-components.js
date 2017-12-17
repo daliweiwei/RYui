@@ -15,6 +15,7 @@
  		width:'',
  		height:'',
  		content:'',
+ 		modal:true,
  		target:$("body")
  	},options);
  	dialog.options = options; 
@@ -22,8 +23,12 @@
  	return dialog;
  };
  RY.dialog.init = function(dialog,param){
+ 	dialog.triggerElement =document.activeElement;
+ 	dialog.triggerElement.blur();
  	var options = dialog.options;
- 	dialog.mask = $('<div class="ryui-dialog-mask"></div>').appendTo(dialog),
+ 	if(options.modal){
+ 		dialog.mask = $('<div class="ryui-dialog-mask"></div>').appendTo(dialog);
+ 	}
  	dialog.body = $('<div class="ryui-dialog-body"></div>').appendTo(dialog),
  	dialog.title = $('<div class="ryui-dialog-title"><h2>'+ options.title +'</h2></div>').appendTo(dialog.body),
  	dialog.closeBtn = $('<span class="ryui-dialog-closeBtn"></span>').appendTo(dialog.title),
@@ -55,6 +60,7 @@
  		heigth:'',
  		holdtime:3000,
  		text:'提示',
+ 		callback:'',
  		target:$("body")
  	},options);
  	var toast = $('<div class="ryui-toast"></div>');
@@ -89,23 +95,33 @@
  		target:$("body")
 
  	},options);
+ 	if(!RY.loading.wrap){
+ 		RY.loading.init(options);
+ 		options.target.append(RY.loading.wrap);
+ 	}
+ };
+ RY.loading.init = function(options){
+ 	RY.loading.wrap = $('<div class="ryui-loading flex-box flex-align-items-center flex-justify-center"></div>');
+ 	$('<div class="ryui-loading-mask"></div>').appendTo(RY.loading.wrap);
+ 	var loading_position = $('<div class="ryui-loading-position"></div>').appendTo(RY.loading.wrap);
  	var loading_li = '';
  	for(var i=1;i<=12;i++){
  		loading_li += '<li class="ryui-loading-frames-'+ i +'"></li>';
  	}
- 	RY.loading.wrap = $('<div class="ryui-loading flex-box flex-align-items-center flex-justify-center"><div class="ryui-loading-mask"></div></div>');
- 	var loading_position = $('<div class="ryui-loading-position"></div>').appendTo(RY.loading.wrap);
  	var loading_frames = $('<ul class="ryui-loading-frames ryui-loading-rotate">'+ loading_li +'</ul>').appendTo(loading_position);
  	loading_frames.css({
  		"width":options.width,
  		"height":options.height,
  		"color":options.color
  	});
- 	options.target.append(RY.loading.wrap);
-
- };
+ }
  RY.loading.methods = {
  	close:function(){
- 		RY.loading.wrap.remove();
+ 		if(!!RY.loading.wrap){
+ 			RY.loading.wrap.remove();
+ 			RY.loading.wrap = null;
+ 		}
  	}
  };
+
+ 

@@ -15,11 +15,14 @@
   <script src="../js/jquery.min.js"></script>
   <script src="../js/RYui-components.js"></script>
   <script>
-    RY.toast({text:'toast'});
+    // RY.toast({text:'toast'});
     // 带时间使用方法：
     // RY.toast({text:'toast',holdtime:1000});
     // 宽高
     // RY.toast({text:'toast',width:'200',height:'50'});
+    RY.toast({text:'toast',callback:function(){
+        console.log("toast callback end!!");
+    }});
   </script>
 </body>
 </html>
