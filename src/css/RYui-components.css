@@ -21,6 +21,19 @@
 .ryui-dialog-closeBtn:hover{color:red;}
 .ryui-dialog-content{position: relative; height:100%; padding-top: 33px; box-sizing: border-box;}
 .dialog_box{padding: 10px;}
+/*confirm*/
+.ryui-confirm{position: fixed;left:0;top:45%;width:100%;height: 1px;z-index: 10000;text-align:center;}
+.ryui-confirm-mask{position: fixed;z-index: 1;background-color: #000;left:0;top:0;right:0;bottom:0;opacity: .1;}
+.ryui-confirm-body{min-width: 200px;max-width: 80%;position: relative;z-index: 2;display: inline-block;}
+.ryui-confirm-bg{position: absolute;left:0;top:0;bottom:0; right: 0;background: #fff;box-shadow:0 0 2px 0 rgba(0,0,0,.5);}
+.ryui-confirm-bg~div{z-index: 1;position: relative;}
+.ryui-confirm-content{padding: 1em;text-align:left;}
+.ryui-confirm-buttonWrap{display: -webkit-flex;display:flex;}
+.ryui-confirm-title{font-size: 1.2rem;line-height: 100%;}
+.ryui-confirm-text{font-size: 1rem;line-height: 150%;}
+.ryui-confirm-title+.ryui-confirm-text{padding-top:1rem;}
+.ryui-confirm-button{display: block;width: 100%;text-align: center;background: #eee;color:#333;border-top: solid 1px #ccc;border-left: solid 1px #ccc;line-height: 32px;}
+.ryui-confirm-button:first-child{border-left:none;}
 
 /*toast*/
 .ryui-toast{position: fixed;top: 48%;left: 0;width: 100%;text-align: center;z-index:10000;}

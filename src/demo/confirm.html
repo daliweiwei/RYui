@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="../css/RYui-framework.css">
+	<link rel="stylesheet" href="../css/RYui-components.css">
+	<link rel="stylesheet" href="../css/RYui-grid.css">
+	<link rel="stylesheet" href="../css/RYui.css">
+</head>
+<body>
+
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/RYui-components.js"></script>
+	<script>
+		$(function(){
+			RY.confirm({
+				text:"是否要关闭窗口",
+				modle:true,
+				buttons:{
+					"确定":function(){
+						console.log("确定窗口关闭！！！");
+					},
+					"取消":function(){
+						console.log("取消窗口关闭！！！");
+					}
+				}
+			});
+		})
+	</script>
+</body>
+</html>
