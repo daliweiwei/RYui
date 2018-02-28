@@ -29,9 +29,25 @@
 		})
 		var test_dialog = RY.dialog({
 			title: "title名字",
-			width:250,
-			height:120,
-			content:$dialog_box  //content也可以直接传字符 content:'hahhahaha' 
+			width:550,
+			height:420,
+			content:$dialog_box,  //content也可以直接传字符 content:'hahhahaha' 
+			onPreClose:function(target,callback){
+				RY.confirm({
+					text:"是否要关闭窗口",
+					modle:false,
+					buttons:{
+						"确定":function(){
+							console.log("允许窗口关闭！！！");
+							callback(true);
+						},
+						"取消":function(){
+							console.log("阻止窗口关闭！！！");
+							callback(false);
+						}
+					}
+				});
+			}
 		});
 
 	</script>
