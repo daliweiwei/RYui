@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>validate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="../css/RYui-framework.css">
+  <link rel="stylesheet" href="../css/RYui-components.css">
+  <link rel="stylesheet" href="../css/RYui-grid.css">
+  <link rel="stylesheet" href="../css/RYui.css">
+</head>
+<body>
+  <style type="text/css">
+  .main_form_group{ max-width: 640px; width:100%; height: auto; margin:30px auto 0; overflow: hidden; box-sizing: border-box; -webkit-box-sizing: border-box;}
+  .main_form_group ul{background: #fff;padding:10px 15px; overflow: hidden;}
+  .main_input_flex{position: relative; display: -moz-box;display: -webkit-box; display:-o-box;display:-ms-box;display: box; padding:5px 0; border-bottom: 1px solid #e4e4ec; box-sizing: border-box;}
+  .main_input_flex label{ display: block; max-width:170px; padding-right: 10px; line-height: 40px; font-size: 15px; color: #333; }
+  .main_input_flex span{display: block;line-height: 40px;}
+  .main_input_text{position: relative; display: block;-ms-box-flex: 1;-webkit-box-flex: 1;box-flex: 1;border: 0;text-align: right; padding:12px 0; line-height: 18px;outline: 0;-webkit-appearance: none;/* box-sizing: border-box;*/overflow: hidden;}
+  .main_input_text:focus{outline:none;border:none;}
+  button:focus{outline:none;border:none;}
+  .main_subBtn{ display: block; width: 300px; height: 49px; color: #fff; margin:0 auto; font-size: 18px; border-radius: 50px; background: rgba(87,204,149,1); border:1px solid rgba(209,238,221,.5); box-shadow: 0 0 16px 0 rgba(209,238,221,.5);border-radius: 50px;z-index: 20; vertical-align: middle;}
+</style>
+<form class="main_form_group">
+  <ul>
+    <li class="main_input_flex">
+      <label>用户名</label>
+      <input class="main_input_text" type="text" placeholder="请填写用户名" name="username" data-vaild="^[\u4e00-\u9fa5]{3,8}$" data-errmsg="请填写正确用户名">
+    </li>
+    <li class="main_input_flex">
+      <label>密码</label>
+      <input class="main_input_text" type="text" placeholder="请填写密码" name="password" data-vaild="^\S" data-errmsg="请填写正确密码">
+    </li>
+  </ul>
+</form>
+<button type="button" class="main_subBtn">提交</button>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/RYui-components.js"></script>
+<script src="../js/RYui-utils.js"></script>
+<script>
+  $(".main_subBtn").on("click",function(){
+    var $formElem =  $("form");
+    var isVaild = RY.Vaild($formElem);
+    console.log(isVaild);
+  })
+</script>
+</body>
+</html>

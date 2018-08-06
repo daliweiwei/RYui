@@ -20,14 +20,17 @@ RY.getParams = function(){
 		return paramsObj; 
 	}
 	return "";
-}
+};
 /*
 *   获取Url指定参数值
 */
 RY.getParam = function(key){
 	var paramsObj = RY.getParams();
 	return paramsObj ? paramsObj[key] || "" : "";
-}
+};
+/*
+*   数据序列化
+*/
 RY.serialize=function(form){
 	var _arr={};
 	$(form.elements).each(function(index,obj){
@@ -52,6 +55,9 @@ RY.serialize=function(form){
 	});
 	return _arr;
 };
+/*
+*   数据反序列化
+*/
 RY.deserialize =function(form,data){
 	form.reset();
 	$.each(data,function(key,value){
@@ -59,40 +65,80 @@ RY.deserialize =function(form,data){
         if(element){
             switch (element.type || element[0].type){
                 case "checkbox":
-                    if(element.length){
-                        $.each(element,function(_index,_el){
-                            for(var i=0;i<value.length;i++){
-                                if(_el.value==value[i]){
-                                    _el.checked=true;
-                                    break;
-                                }
+                if(element.length){
+                    $.each(element,function(_index,_el){
+                        for(var i=0;i<value.length;i++){
+                            if(_el.value==value[i]){
+                                _el.checked=true;
+                                break;
                             }
-                        });
-                    }else{
-                        if(element.value==value){
-                            element.checked=true;
-                        }
-                    }
-                break;
-                case "radio":
-                    $.each(element,function(index,obj){
-                        if(obj.value==value){
-                            obj.checked=true;
                         }
                     });
+                }else{
+                    if(element.value==value){
+                        element.checked=true;
+                    }
+                }
+                break;
+                case "radio":
+                $.each(element,function(index,obj){
+                    if(obj.value==value){
+                        obj.checked=true;
+                    }
+                });
                 break;
                 case "select-one":
-                    for(var i=0;i<element.length;i++){
-                        if(element[i].value==value){
-                            element[i].selected=true;
-                            break;
-                        }
+                for(var i=0;i<element.length;i++){
+                    if(element[i].value==value){
+                        element[i].selected=true;
+                        break;
                     }
+                }
                 break;
                 default:
-                    element.value=value;
+                element.value=value;
                 break;
             }
         }
     });
+};
+/*
+*   表单规则验证
+*/
+RY.Validate = function (_this) {
+    if (!!$(_this).data("vaild")) {
+        var pattern = new RegExp($(_this).data("vaild"));
+        if (pattern.test($(_this).val())) {
+            console.log("succ")
+        } else {
+            var errmsg = $(_this).data("errmsg");
+            RY.toast({text:errmsg});
+            console.log(errmsg);
+            return false;
+        }
+    } else {
+        console.log("无验证规则")
+    }
+    return true;
+};
+/*
+*   表单验证
+*/
+
+RY.Vaild = function (formElem) {
+    var checkResult = true;
+    formElem.each(function (index, _this) {
+        $.each(_this, function (i) {
+            checkResult = RY.Validate(_this[i]) && checkResult;
+            if(!checkResult){
+                return false;
+            }
+        })
+        // $.each(_this, function (k) {
+        //  $(_this[k]).blur(function () {
+        //      $.Vaild(this);
+        //  });
+        // })
+    });
+    return checkResult;
 };
